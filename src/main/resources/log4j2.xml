@@ -1,9 +1,5 @@
-<!-- 级别依次为【从高到低】：FATAL > ERROR > WARN > INFO > DEBUG > TRACE  FEWIDT -->
-
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="OFF">
-
-
 	<Properties>
 		<Property name="PID">????</Property>
 		<Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
@@ -41,6 +37,7 @@
 		</RollingFile>
 	</Appenders>
 	<Loggers>
+	<!-- 级别依次为【从高到低】：FATAL > ERROR > WARN > INFO > DEBUG > TRACE  FEWIDT -->
 		<logger name="cn.com.studyshop" level="debug">
 		</logger>
 		<Root level="ERROR"><!--root层级-->
