@@ -7,7 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import cn.com.studyshop.service.ComputeService;
 
 @RestController
 public class SendEmailController {
@@ -16,6 +19,9 @@ public class SendEmailController {
 
 	@Autowired
 	private DiscoveryClient client;
+
+	@Autowired
+	private ComputeService computeService;
 
 	@RequestMapping("/send/email")
 	public String sendEmail() {
@@ -33,5 +39,10 @@ public class SendEmailController {
 		System.out.println("Send email out!");
 		logger.info("Send email out!");
 		return "Send email out!";
+	}
+
+	@RequestMapping("/send/email/add")
+	public Integer computeService(@RequestParam int a, @RequestParam int b) {
+		return computeService.add(a, b);
 	}
 }
