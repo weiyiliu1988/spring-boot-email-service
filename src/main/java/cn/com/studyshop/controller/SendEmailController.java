@@ -27,6 +27,14 @@ public class SendEmailController {
 	public String sendEmail() {
 
 		try {
+			System.out.println("retry------------in");
+			
+			try {
+				Thread.sleep(1000000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println(client.getInstances("email-service").get(0).getUri().toURL().toString());
 
 			logger.debug("service url:->{}", client.getInstances("compute-service").get(0).getUri().toURL().toString());
